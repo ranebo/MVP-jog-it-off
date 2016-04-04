@@ -1,0 +1,126 @@
+
+<div class="row-col col-sm-6 col-md-4" style="background-color: #AB5F7E">
+  <div>
+  <h2></h2>
+  </div>
+</div>
+<div class="row-col col-sm-6 col-md-4" style="background-color: #915183">
+  <div>
+  <h2></h2>
+  </div>
+</div>
+<div class="row-col col-sm-6 col-md-4" style="background-color: #AB5F7E">
+  <div>
+  <h2></h2>
+  </div>
+</div>
+
+<section class="main-display" ng-controller="InputsController as inputs">
+  <div class="meal-inputs-row">
+    <div class="row-col col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <img src="assets/tasty.jpeg" alt="delicious treats">
+      </div>
+      <div class="meal-form">
+        <h3>
+          What Are You Gonna Eat?
+        </h3>
+        <form class="form-inline pull-right">
+          <input class="form-control" type="text" placeholder="Ex: hamburger, donut...">
+          <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+        <form class="input-group form-inline pull-right">
+          <div class="input-group">
+            <input class="form-control" type="number" placeholder="0" ng-model="getCalories">
+            <div class="input-group-addon" style="width: 20px">Calories</div>
+          </div>
+          <button ng-click="showCal()" type="submit" class="btn btn-primary" style="margin-left: 4px">Submit</button>
+        </form>
+      </div>
+    </div>
+    <div class="row-col col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <img src="assets/jogging.jpg" alt="jogging on the beach">
+      </div>
+      <div class="meal-form">
+        <h3>
+          How Fast Do You Jog?
+        </h3>
+        <div class="jog-forms">
+          <div class="jog-checks">
+            <form class="checkbox">
+              <label>
+                <input type="checkbox" value="8">
+                Fast Jogger
+              </label>
+            </form>
+            <form class="checkbox">
+              <label>
+                <input type="checkbox" value="5">
+                Average Jogger
+              </label>
+            </form>
+            <form class="checkbox">
+              <label>
+                <input type="checkbox" value="3">
+                Slow Jogger
+              </label>
+            </form>
+          </div>
+          <form class="input-group form-inline jog-inputs pull-right">
+            <div class="input-group">
+              <input class="form-control" type="number" placeholder="0" style="width: 65px;" ng-model="getSpeed">
+              <div class="input-group-addon" style="width: 20px">mph</div>
+            </div>
+            <button ng-click="showSpeed()" type="submit" class="btn btn-primary" style="margin-left: 4px">Submit</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row-col col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <img src="assets/weighyourself.jpg" alt="woman using scale">
+      </div>
+      <div class="meal-form">
+       <h3>
+          ...And How Much Do You Weigh?
+        </h3>
+        <form class="input-group form-inline pull-center pull-right weight-input">
+            <div class="input-group">
+              <input class="form-control" type="number" placeholder="0" style="width: 65px;" ng-model="getWeight">
+              <div class="input-group-addon" style="width: 20px">lbs</div>
+            </div>
+            <button ng-click="showWeight()" type="submit" class="btn btn-primary" style="margin-left: 4px">Submit</button>
+          </form>
+      </div>
+    </div>
+
+  <div class="meal-results">
+    <div class="row-col col-sm-6 col-md-4" style="background-color: #AB5F7E">
+      <div class="calories-result">
+      <h4>{{numCalories}}</h4>
+      </div>
+    </div>
+    <div class="row-col col-sm-6 col-md-4" style="background-color: #915183">
+      <div class="speed-result">
+      <h4>{{jogSpeed}}</h4>
+      </div>
+    </div>
+    <div class="row-col col-sm-6 col-md-4" style="background-color: #AB5F7E">
+      <div class="weight-result">
+      <h4>{{weight}}</h4>
+      </div>
+    </div>
+    <div ng-show="numCalories && jogSpeed && weight" class="results-display">
+    <button ng-click="findRuntime()" type="submit" class="btn btn-primary btn-to-calculate">Let's Do This!</button>
+      <div ng-show="showRuntime" class="result-bar-container">
+        <h2 class="result-bar col-lg-6 col-lg-offset-3 text-center">
+          {{ showRuntime }}
+        </h2>
+      </div>
+    </div>
+  </div>
+
+</section>

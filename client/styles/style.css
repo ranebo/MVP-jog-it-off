@@ -1,0 +1,228 @@
+
+body {
+  background-color: #555794;
+}
+
+
+h3 {
+  top: 20px;
+  margin: auto;
+  color: white;
+  position: relative;
+  text-align: right;
+  padding-right: 25px;
+  margin-bottom: 40px;
+  text-decoration: underline;
+}
+
+h4 {
+  font-weight: 400;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+}
+
+/*
+=========================================================================
+
+HEADER
+
+=========================================================================
+*/
+
+header {
+  background-color: #555794;
+}
+
+.title {
+  width: 100%;
+  height: 70px;
+  margin: 0;
+  background-color: #2a3140;
+}
+
+h1.title {
+  font-weight: 200;
+  color: white;
+  padding: 25px 0 0 65px;
+}
+
+/*
+=========================================================================
+
+NAV BAR
+
+=========================================================================
+*/
+
+.userstatus {
+  margin-top: 14px;
+  float: right;
+  margin-right: 20px;
+}
+.navigation {
+  margin-top: 10px;
+  background-color: grey;
+}
+
+.styling-under-nav {
+  height: 20px;
+  margin-top: 6px;
+  margin-bottom: 20px;
+  background-color: #2a3140;
+}
+
+.nav-tabs {
+  margin-bottom: 0;
+  padding-top: 6px;
+}
+
+.nav-tabs>li.active>a {
+  color: white;
+  background-color: #555794;
+  border: 1px solid #555794;
+}
+
+.nav-tabs>li>a {
+  color: white;
+  background-color: #7F82B2;
+  border: 1px solid #555794;
+}
+.nav-tabs>li:hover>a {
+  color: #555794;
+}
+/*
+=========================================================================
+
+INPUT ROW
+
+=========================================================================
+*/
+
+.meal-inputs-row {
+  background-color: #2a3140;
+  height: 500px;
+}
+
+.thumbnail {
+  margin: auto;
+  margin-top: 20px;
+  background-color: #555794;
+  border: none;
+}
+
+img {
+  width: 510px;
+  max-height: 275px
+}
+
+p {
+  color: white;
+}
+
+.row-col {
+  background-color: #2a3140;
+  height: 100%;
+/*  border-right: 1px solid black;*/
+}
+
+.meal-form {
+  position: absolute;
+  width: 400px;
+  height: 200px
+  bottom: 0;
+  margin: auto;
+  margin-bottom: 15px;
+}
+
+.jog-forms {
+  width: 400px;
+}
+.jog-checks {
+  margin-left: 60px;
+  width: 120px;
+  float: left;
+}
+
+.jog-inputs {
+  margin-top: 30px;
+  width: 200px;
+}
+
+.weight-input {
+  padding: 20px 100px 0 0;
+}
+label {
+  color: white;
+}
+form {
+  margin: 10px 0;
+}
+
+/*
+=========================================================================
+
+MEAL RESULTS
+
+=========================================================================
+*/
+
+.results-display {
+  width: 100%;
+}
+
+/*.result-bar-container {
+  width: 100%;
+  height: 100%;
+  background-color: #AB5F7E;
+}*/
+
+.result-bar {
+  font-weight: 200;
+  text-align: center;
+  color: #2a3140;
+  padding: 20px 50px;
+  border: 2px solid  black;
+/*  background-color: white;*/
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background: grey;
+/*  background: -webkit-linear-gradient(grey, silver);
+  background: -o-linear-gradient(grey, silver);
+  background: -moz-linear-gradient(grey, silver);
+  background: linear-gradient(grey, silver);
+*/}
+
+/*
+=========================================================================
+
+BUTTONS AND LINKS
+
+=========================================================================
+*/
+
+.btn-to-calculate {
+  width: 100%;
+  height: 40px;
+  font-size: 20px;
+  background-color: #2a3140;
+  border-radius: 0px
+}
+
+a {
+  color: #2a3140;
+}
+
+/*
+=========================================================================
+
+FOOTER
+
+=========================================================================
+*/
+footer {
+  position: absolute;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+  background-color:  #2a3140;
+}

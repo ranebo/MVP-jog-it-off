@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app='MVP'>
+  <head>
+    <meta charset="utf-8" />
+    <title>MVP</title>
+     <link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles/style.css" />
+  </head>
+  <body>
+
+    <script src="lib/angular/angular.js"></script>
+    <script src="../node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="app/controllers/inputs.js"></script>
+    <script src="app/app.js"></script>
+
+    <header>
+      <div class="title">
+        <h1 class="title">Jog It Off</h1>
+      </div>
+      <nav class='userstatus'>
+        <ul class="nav nav-pills">
+          <li role="presentation" class="active"><a ui-sref="#">LOGOUT</a></li>
+        </ul>
+      </nav>
+      <nav class='navigation'>
+        <ul class="nav nav-tabs">
+          <li role="presentation" class="active"><a ui-sref="home">Should I...    ¯\_(ツ)_/¯ </a></li>
+          <li role="presentation"><a ui-sref="history"> What Have I Done...     (╯︵╰,)</a></li>
+        </ul>
+      </nav>
+      <div class="styling-under-nav"></div>
+    </header>
+
+    <div class="container">
+      <div ui-view></div>
+    </div>
+
+
+    <footer></footer>
+  </body>
+</html>
