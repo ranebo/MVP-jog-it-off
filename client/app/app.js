@@ -8,7 +8,7 @@ angular.module('MVP', [
   $stateProvider
     .state('home', {
       url: '/home',
-      templateUrl: 'partials/partial-inputs-submit.html'
+      templateUrl: 'app/partials/partial-inputs-submit.html'
     });
     // .state('history')
 });
