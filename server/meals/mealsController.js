@@ -22,14 +22,14 @@ module.exports = {
       speed: req.body.speed,
       weight: req.body.weight,
       miles: req.body.miles,
-      mins: req.body.mins
-      // time: null   //NOT sure if leave this out Schema will create it
+      mins: req.body.mins,
+      //time: null   //NOT sure if leave this out Schema will create it
     };
-    console.log("HELLO, SERVER SIDE MEAL", newMeal)
+    console.log("==============")
     createMeal(newMeal)
     .then( function(createdMeal) {
-      if (createdLink) {
-        res.json(createdLink);
+      if (createdMeal) {
+        res.json(createdMeal);
       }
     })
     .fail( function (error) {

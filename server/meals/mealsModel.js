@@ -9,3 +9,5 @@ var MealSchema = new mongoose.Schema({
   mins: Number,
   time : { type : Date, default: Date.now }
 });
+
+module.exports = mongoose.model('Meal', MealSchema);

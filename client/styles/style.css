@@ -1,6 +1,6 @@
 
 body {
-  background-color: #555794;
+  background-color: black;
 }
 
 
@@ -31,7 +31,7 @@ HEADER
 */
 
 header {
-  background-color: #555794;
+  background-color: black;
 }
 
 .title {
@@ -44,7 +44,7 @@ header {
 h1.title {
   font-weight: 200;
   color: white;
-  padding: 25px 0 0 65px;
+  padding: 25px 0 0 100px;
 }
 
 /*
@@ -77,19 +77,15 @@ NAV BAR
   padding-top: 6px;
 }
 
-.nav-tabs>li.active>a {
-  color: white;
-  background-color: #555794;
-  border: 1px solid #555794;
+.nav-tabs>li>a {
+  color: black;
 }
 
-.nav-tabs>li>a {
+.nav-tabs>li:hover>a
+ {
   color: white;
-  background-color: #7F82B2;
-  border: 1px solid #555794;
-}
-.nav-tabs>li:hover>a {
-  color: #555794;
+  background-color: black;
+  border-bottom: 2px solid black;
 }
 /*
 =========================================================================
@@ -107,7 +103,7 @@ INPUT ROW
 .thumbnail {
   margin: auto;
   margin-top: 20px;
-  background-color: #555794;
+  background-color: black;
   border: none;
 }
 

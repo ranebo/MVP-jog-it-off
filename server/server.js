@@ -6,6 +6,7 @@ var app = express();
 mongoose.connect('mongodb://localhost/MVP');
 
 require('./middleware.js')(app, express);
+require('./router.js')(app, express);
 
 app.listen(8000);
 
