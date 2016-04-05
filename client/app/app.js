@@ -20,6 +20,11 @@ angular.module('MVP', [
         }
       }
     });
+    // .state('calories', {
+    //   parent: 'history',
+    //   url: '',
+    //   templateUrl: 'app/partials/partial-caloriesd3.html'
+    // });
 })
 .factory("Meals", function ($http) {
 
@@ -54,4 +59,25 @@ angular.module('MVP', [
   };
 
 })
+.factory("D3", function() {
 
+  var makeChart = function(meals) {
+    d3.select(".chart").html("");
+    var x = d3.scale.linear()
+      .domain([0, d3.max(meals)])
+      .range([0, 650]);
+
+    d3.select(".chart")
+    .selectAll("div")
+      .data(meals)
+    .enter().append("div")
+      .style("width", function(d) { return x(d) + "px"; })
+      .text(function(d) { return d; });
+
+  };
+
+  return {
+    makeChart: makeChart
+  };
+
+});

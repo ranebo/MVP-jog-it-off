@@ -1,5 +1,11 @@
+var underscore = angular.module('underscore', []);
+  underscore.factory('_', function() {
+      return window._;
+  });
 angular.module('MVP.controllers', [])
 .controller("InputsController", function ($scope, Meals) {
+
+  $scope.loggedIn = true;
 
 //input variables
   $scope.getMeal;
@@ -82,9 +88,29 @@ angular.module('MVP.controllers', [])
     });
   };
 })
-.controller("HistController", function ($scope, Meals, allMeals) {
+.controller("HistController", function ($scope, Meals, D3, allMeals) {
 
   $scope.allMeals = allMeals;
 
+  $scope.calories = _.map(_.sortBy($scope.allMeals, function(meal) { return meal.time; }), function(meal) { return meal.calories; });
+
+  $scope.minutes = _.map(_.sortBy($scope.allMeals, function(meal) { return meal.time; }), function(meal) { return meal.mins; });
+
+  $scope.weight = _.map(_.sortBy($scope.allMeals, function(meal) { return meal.time; }), function(meal) { return meal.weight; });
+
+  $scope.miles = _.map(_.sortBy($scope.allMeals, function(meal) { return meal.time; }), function(meal) { return meal.miles; });
+
+  $scope.calChart = function() {
+    D3.makeChart($scope.calories);
+  };
+  $scope.minChart = function() {
+    D3.makeChart($scope.minutes);
+  };
+  $scope.weightChart = function() {
+    D3.makeChart($scope.weight);
+  };
+  $scope.mileChart = function() {
+    D3.makeChart($scope.miles);
+  };
 
 });

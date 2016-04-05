@@ -17,14 +17,14 @@
 
 <section class="history-row" >
   <div class="history-container">
-    <div class="col-md-6 left-col" style="background-color: red">
+    <div class="col-md-6 left-col" style="background-color: #AB5F7E">
 
+    <h2>Look At What You've Done!</h2>
 
-
-    <div class='meals' ng-repeat="meal in allMeals | filter: filterBar:strict | orderBy: 'time'">
+    <div class='meals' ng-repeat="meal in allMeals | orderBy: '-time'">
 <!--       <img src='../assets/redirect_icon.png'/> -->
        <div class='showMeal'>
-         <div class ='time'>{{meal.time}}</div>
+         <div class ='time'>Date: {{meal.time.slice(0, 10)}}</div>
          <div class='meal'>What you ate: {{meal.meal}}</div>
          <div class='calories'>{{meal.calories}} calories</div>
          <sdiv class = 'speed'>{{meal.speed}} mph</sdiv>
@@ -34,12 +34,27 @@
        </div>
     </div>
 
-
-
     </div>
 
-    <div class="col-md-6 right-col" style="background-color: green">
+
+
+    <div class="col-md-6 right-col" style="background-color: #915183">
+      <h2>Stay Trendy My Friend!</h2>
+      <nav class="nav-stats">
+        <ul class='nav nav-pills stats-pills'>
+          <li><a ng-Click="calChart()" href="#"> By Calorie</a></li>
+          <li><a ng-Click="minChart()" href="#"> By Minute</a></li>
+          <li><a ng-Click="weightChart()" href="#"> By Weight</a></li>
+          <li><a ng-Click="mileChart()" href="#"> By Mile</a></li>
+        </ul>
+      </nav>
       <div class="meals-stats">
+
+      <div class="chart" />
+
+
+
+
       </div>
     </div>
 

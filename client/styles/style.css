@@ -3,6 +3,12 @@ body {
   background-color: black;
 }
 
+h2 {
+  text-decoration: underline;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px black;
+}
 
 h3 {
   top: 20px;
@@ -177,12 +183,13 @@ MEAL RESULTS
 .result-bar {
   font-weight: 200;
   text-align: center;
-  color: #2a3140;
+  text-shadow: none;
+  color: whites;
   padding: 20px 50px;
   border: 2px solid  black;
 /*  background-color: white;*/
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  background: grey;
+  background: green;
 /*  background: -webkit-linear-gradient(grey, silver);
   background: -o-linear-gradient(grey, silver);
   background: -moz-linear-gradient(grey, silver);
@@ -205,6 +212,10 @@ BUTTONS AND LINKS
   border-radius: 0px
 }
 
+.btn-eat {
+  background-color: purple;
+}
+
 a {
   color: #2a3140;
 }
@@ -219,25 +230,94 @@ HISTORY PAGE
 
 .history-row {
   height: 650px;
+  background-color: #2a3140;
 }
 
 .history-container {
   height: 100%;
-  margin: 40px 30px;
-}
-
-.left-col {
-  height: 100%;
-}
-
-.right-col {
-  height: 100%;
+  margin: 40px;
+  background-color: #2a3140;
 }
 
 .meals-dsplay {
   height: 100%;
   margin: 25px 20px;
 }
+
+/*
+=========================================================================
+
+LEFT COLUMN
+
+=========================================================================
+*/
+
+.meals {
+  color: white;
+  background-color: #2a3140;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid black;
+}
+
+.left-col {
+  margin-top: 15px;
+  height: 600px;
+  overflow: scroll;
+  overflow-x: hidden;
+  border-bottom: 2px solid black;
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+}
+
+/*
+=========================================================================
+
+RIGHT COLUMN
+
+=========================================================================
+*/
+
+.right-col {
+  margin-top: 15px;
+  height: 600px;
+  border: 2px solid black;
+}
+
+.nav-stats {
+  margin-top: 20px;
+  margin-left: 100px;
+}
+
+.stats-pills li a {
+  color: white;
+  border: 1px solid black;
+  margin: 0 20px;
+  background-color: #2a3140;
+}
+
+.stats-pills li a:hover {
+  color: black;
+}
+
+.meals-stats {
+  padding: 10px 0;
+  margin: 20px;
+  height: 435px;
+  background-color: black;
+
+}
+
+.chart div{
+  font: 10px sans-serif;
+  background-color: steelblue;
+  text-align: right;
+  padding: 3px;
+  margin: 5px 0;
+  color: white;
+}
+
 /*
 =========================================================================
 
@@ -251,4 +331,7 @@ footer {
   height: 20px;
   width: 100%;
   background-color:  #2a3140;
+}
+cite {
+  color: silver;
 }

@@ -23,9 +23,7 @@ module.exports = {
       weight: req.body.weight,
       miles: req.body.miles,
       mins: req.body.mins,
-      //time: null   //NOT sure if leave this out Schema will create it
     };
-    console.log("==============")
     createMeal(newMeal)
     .then( function(createdMeal) {
       if (createdMeal) {
