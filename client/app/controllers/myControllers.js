@@ -20,7 +20,7 @@ angular.module('MVP.controllers', [])
   var w;
   var minToRun;
   var milesToRun;
-  var m = "No meal added";
+  var m = "Something";
 
   $scope.updateMeal = function () {
     m = $scope.getMeal;
@@ -81,4 +81,10 @@ angular.module('MVP.controllers', [])
       }
     });
   };
+})
+.controller("HistController", function ($scope, Meals, allMeals) {
+
+  $scope.allMeals = allMeals;
+
+
 });

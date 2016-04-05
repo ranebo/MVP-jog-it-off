@@ -1,6 +1,6 @@
 angular.module('MVP', [
-  'ui.router',
-  'MVP.controllers'
+  'MVP.controllers',
+  'ui.router'
 ])
 .config(function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/home');
@@ -9,8 +9,17 @@ angular.module('MVP', [
     .state('home', {
       url: '/home',
       templateUrl: 'app/partials/partial-inputs-submit.html'
+    })
+    .state('history', {
+      url: '/history',
+      templateUrl: 'app/partials/partial-history.html',
+      controller: 'HistController',
+      resolve: {
+        allMeals: function(Meals) {
+          return Meals.getAll();
+        }
+      }
     });
-    // .state('history')
 })
 .factory("Meals", function ($http) {
 
@@ -19,7 +28,6 @@ angular.module('MVP', [
       method: 'GET',
       url: '/api/meals'
     }).then( function(data) {
-      console.log("---------------HERE--------", data.data);
       return data.data;
     }, function(err) {
       console.log("Could not get all meals");
@@ -45,4 +53,5 @@ angular.module('MVP', [
     addOne: addOne
   };
 
-});
+})
+

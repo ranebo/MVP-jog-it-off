@@ -1,0 +1,67 @@
+
+<div class="row-col col-xs-6 col-md-4" style="background-color: #AB5F7E">
+  <div>
+  <h2></h2>
+  </div>
+</div>
+<div class="row-col col-xs-6 col-md-4" style="background-color: #915183">
+  <div>
+  <h2></h2>
+  </div>
+</div>
+<div class="row-col col-xs-6 col-md-4" style="background-color: #AB5F7E">
+  <div>
+  <h2></h2>
+  </div>
+</div>
+
+<section class="history-row" >
+  <div class="history-container">
+    <div class="col-md-6 left-col" style="background-color: red">
+
+
+
+    <div class='meals' ng-repeat="meal in allMeals | filter: filterBar:strict | orderBy: 'time'">
+<!--       <img src='../assets/redirect_icon.png'/> -->
+       <div class='showMeal'>
+         <div class ='time'>{{meal.time}}</div>
+         <div class='meal'>What you ate: {{meal.meal}}</div>
+         <div class='calories'>{{meal.calories}} calories</div>
+         <sdiv class = 'speed'>{{meal.speed}} mph</sdiv>
+         <div class='weight'>{{meal.weight}} lbs</div>
+         <div class='miles'>{{meal.miles}} miles</div>
+         <div class ='mins'>{{meal.mins}} minutes</div>
+       </div>
+    </div>
+
+
+
+    </div>
+
+    <div class="col-md-6 right-col" style="background-color: green">
+      <div class="meals-stats">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+<div class="row-col col-xs-6 col-md-4" style="background-color: #AB5F7E">
+  <div>
+  <h2></h2>
+  </div>
+</div>
+<div class="row-col col-xs-6 col-md-4" style="background-color: #915183">
+  <div>
+  <h2></h2>
+  </div>
+</div>
+<div class="row-col col-xs-6 col-md-4" style="background-color: #AB5F7E">
+  <div>
+  <h2></h2>
+  </div>
+</div>
