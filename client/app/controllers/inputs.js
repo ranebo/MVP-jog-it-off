@@ -1,7 +1,8 @@
 angular.module('MVP.controllers', [])
-.controller("InputsController", function ($scope) {
+.controller("InputsController", function ($scope, Meals) {
 
 //input variables
+  $scope.getMeal;
   $scope.getCalories;
   $scope.getSpeed;
   $scope.getWeight;
@@ -13,9 +14,17 @@ angular.module('MVP.controllers', [])
   $scope.showRuntime;
 
  //variables for formula: calories, speed, weight
+ //and variable for post: min, miles, meal
   var c;
   var s;
   var w;
+  var minToRun;
+  var milesToRun;
+  var m = "No meal added";
+
+  $scope.updateMeal = function () {
+    m = $scope.getMeal;
+  };
 
   $scope.showCal = function() {
     if ($scope.getCalories) {
@@ -43,15 +52,33 @@ angular.module('MVP.controllers', [])
 
   $scope.findRuntime = function() {
   //results variables
-    var minToRun;
-    var milesToRun;
     if (c && s && w) {
       //Conversion Coefficient = 89 ( lbs * miles * min )/ (cal * hr )
+      //based off google search: 200lbs man running 8mph will burn 1074 calories (not very fancy)
       minToRun = Math.round((89 * c) / (s * w));
       milesToRun = Math.round((minToRun * s) / 60);
       var isManyMin = minToRun >= 60 ? "My God!" : "Hmmm.";
       var mileOrS = milesToRun > 1 ? "miles!" : "mile!";
       $scope.showRuntime = isManyMin + " You'll have to run for " + minToRun + " minutes, that means you'll run about " + milesToRun + " " + mileOrS;
     }
+  };
+
+  $scope.postMeal = function() {
+    var meal = {
+      meal: m,
+      calories: c,
+      speed: s,
+      weight: w,
+      miles: milesToRun,
+      mins: minToRun
+    };
+    console.log("HELLO CLIENT SIDE MEALS", meal);
+    Meals.addOne(JSON.stringify(meal))
+    .then(function(data) {
+      console.log(data);
+      if (data) {
+        meal = "No meal added";
+      }
+    });
   };
 });

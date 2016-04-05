@@ -26,8 +26,8 @@
           What Are You Gonna Eat?
         </h3>
         <form class="form-inline pull-right">
-          <input class="form-control" type="text" placeholder="Ex: hamburger, donut...">
-          <button type="submit" class="btn btn-primary">Search</button>
+          <input ng-model="getMeal" class="form-control" type="text" placeholder="Ex: hamburger, donut...">
+          <button ng-click="updateMeal()" type="submit" class="btn btn-primary">Submit</button>
         </form>
         <form class="input-group form-inline pull-right">
           <div class="input-group">
@@ -119,6 +119,7 @@
         <h2 class="result-bar col-lg-6 col-lg-offset-3 text-center">
           {{ showRuntime }}
         </h2>
+      <button ng-show="showRuntime" ng-click="postMeal()" type="submit" class="btn btn-primary btn-to-calculate">I'm Gonna Eat It!</button>
       </div>
     </div>
   </div>
