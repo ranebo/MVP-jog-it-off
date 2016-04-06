@@ -304,9 +304,8 @@ RIGHT COLUMN
 .meals-stats {
   padding: 10px 0;
   margin: 20px;
-  height: 435px;
+  height: 375px;
   background-color: black;
-
 }
 
 .chart div{
@@ -316,7 +315,19 @@ RIGHT COLUMN
   padding: 3px;
   margin: 5px 0;
   color: white;
+  border-radius: 0 5px 5px 0;
 }
+
+.l {
+  float: left;
+  padding-left: 60px;
+}
+.r {
+  float: right;
+  padding-right: 60px;
+}
+
+
 
 /*
 =========================================================================

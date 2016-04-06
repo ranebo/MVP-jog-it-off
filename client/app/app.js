@@ -20,11 +20,6 @@ angular.module('MVP', [
         }
       }
     });
-    // .state('calories', {
-    //   parent: 'history',
-    //   url: '',
-    //   templateUrl: 'app/partials/partial-caloriesd3.html'
-    // });
 })
 .factory("Meals", function ($http) {
 
@@ -73,9 +68,7 @@ angular.module('MVP', [
     .enter().append("div")
       .style("width", function(d) { return x(d) + "px"; })
       .text(function(d) { return d; });
-
   };
-
   return {
     makeChart: makeChart
   };

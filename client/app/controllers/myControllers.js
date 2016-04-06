@@ -28,6 +28,18 @@ angular.module('MVP.controllers', [])
   var milesToRun;
   var m = "Something";
 
+  $scope.jogFast = function() {
+    $scope.getSpeed = 8;
+  };
+
+  $scope.jogAvg = function() {
+    $scope.getSpeed = 5;
+  };
+
+  $scope.jogSlow = function() {
+    $scope.getSpeed = 3;
+  };
+
   $scope.updateMeal = function () {
     m = $scope.getMeal;
   };
@@ -37,6 +49,7 @@ angular.module('MVP.controllers', [])
       $scope.numCalories = $scope.getCalories + " calories";
       c = $scope.getCalories;
       $scope.getCalories = undefined;
+      $scope.showRuntime = undefined;
     }
   };
 
@@ -45,6 +58,7 @@ angular.module('MVP.controllers', [])
       $scope.jogSpeed = $scope.getSpeed + " mph";
       s = $scope.getSpeed;
       $scope.getSpeed = undefined;
+      $scope.showRuntime = undefined;
     }
   };
 
@@ -53,6 +67,7 @@ angular.module('MVP.controllers', [])
       $scope.weight = $scope.getWeight + " lbs";
       w = $scope.getWeight;
       $scope.getWeight = undefined;
+      $scope.showRuntime = undefined;
     }
   };
 
@@ -91,26 +106,28 @@ angular.module('MVP.controllers', [])
 .controller("HistController", function ($scope, Meals, D3, allMeals) {
 
   $scope.allMeals = allMeals;
+  $scope.chartDisplay = 'Hello';
 
-  $scope.calories = _.map(_.sortBy($scope.allMeals, function(meal) { return meal.time; }), function(meal) { return meal.calories; });
 
-  $scope.minutes = _.map(_.sortBy($scope.allMeals, function(meal) { return meal.time; }), function(meal) { return meal.mins; });
+  $scope.calories = _.map(_.sortBy($scope.allMeals, function(meal) { return meal.time; }), function(meal) { return meal.calories; }).reverse();
 
-  $scope.weight = _.map(_.sortBy($scope.allMeals, function(meal) { return meal.time; }), function(meal) { return meal.weight; });
+  $scope.minutes = _.map(_.sortBy($scope.allMeals, function(meal) { return meal.time; }), function(meal) { return meal.mins; }).reverse();
 
-  $scope.miles = _.map(_.sortBy($scope.allMeals, function(meal) { return meal.time; }), function(meal) { return meal.miles; });
+  $scope.weight = _.map(_.sortBy($scope.allMeals, function(meal) { return meal.time; }), function(meal) { return meal.weight; }).reverse();
+
+  $scope.miles = _.map(_.sortBy($scope.allMeals, function(meal) { return meal.time; }), function(meal) { return meal.miles; }).reverse();
 
   $scope.calChart = function() {
-    D3.makeChart($scope.calories);
+    D3.makeChart($scope.calories.slice(0, 15));
   };
   $scope.minChart = function() {
-    D3.makeChart($scope.minutes);
+    D3.makeChart($scope.minutes.slice(0, 15));
   };
   $scope.weightChart = function() {
-    D3.makeChart($scope.weight);
+    D3.makeChart($scope.weight.slice(0, 15));
   };
   $scope.mileChart = function() {
-    D3.makeChart($scope.miles);
+    D3.makeChart($scope.miles.slice(0, 15));
   };
 
 });
