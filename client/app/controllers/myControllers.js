@@ -120,16 +120,16 @@ angular.module('MVP.controllers', [])
   $scope.miles = _.map(_.sortBy($scope.allMeals, function(meal) { return meal.time; }), function(meal) { return meal.miles; }).reverse();
 
   $scope.calChart = function() {
-    D3.makeChart($scope.calories.slice(0, 15));
+    D3.makeChart($scope.calories);
   };
   $scope.minChart = function() {
-    D3.makeChart($scope.minutes.slice(0, 15));
+    D3.makeChart($scope.minutes);
   };
   $scope.weightChart = function() {
-    D3.makeChart($scope.weight.slice(0, 15));
+    D3.makeChart($scope.weight);
   };
   $scope.mileChart = function() {
-    D3.makeChart($scope.miles.slice(0, 15));
+    D3.makeChart($scope.miles);
   };
 
 });
