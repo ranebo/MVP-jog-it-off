@@ -23,6 +23,7 @@
 
     <div class='meals' ng-repeat="meal in allMeals | orderBy: '-time'">
        <div class='showMeal'>
+         <div class ='guest'>User: {{meal.guest}}</div>
          <div class ='time'>Date: {{meal.time.slice(0, 10)}}</div>
          <div class='meal'>What you ate: {{meal.meal}}</div>
          <div class='calories'>{{meal.calories}} calories</div>

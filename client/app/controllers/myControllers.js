@@ -2,11 +2,12 @@ var underscore = angular.module('underscore', []);
   underscore.factory('_', function() {
       return window._;
   });
+//https://ndb.nal.usda.gov/ndb/api/doc for desired api
 angular.module('MVP.controllers', [])
 .controller("InputsController", function ($scope, Meals) {
 
   $scope.loggedIn = true;
-
+  $scope.guest = "Guest";
 //input variables
   $scope.getMeal;
   $scope.getCalories;
@@ -86,6 +87,7 @@ angular.module('MVP.controllers', [])
 
   $scope.postMeal = function() {
     var meal = {
+      guest: $scope.guest,
       meal: m,
       calories: c,
       speed: s,

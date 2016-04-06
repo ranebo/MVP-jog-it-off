@@ -17,6 +17,7 @@ module.exports = {
 
   addMeal: function(req, res, next) {
     var newMeal = {
+      guest: req.body.guest,
       meal: req.body.meal,
       calories: req.body.calories,
       speed: req.body.speed,

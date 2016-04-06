@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 
 var MealSchema = new mongoose.Schema({
+  guest: String,
   meal: String,
   calories: Number,
   speed: Number,
